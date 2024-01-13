@@ -3,6 +3,7 @@
   outline: none !important;
   box-shadow: none !important;
 }
+
 pre {
   padding: 10px;
   overflow: auto;
@@ -20,8 +21,9 @@ pre {
     display: none;
   }
 }
+
 .pane.pane-top {
-  /* background-color: #202429; */
+  background-color: rgb(9, 2, 18);
   padding-left: 5px !important;
   padding-right: 5px !important;
   justify-content: center !important;
@@ -32,15 +34,47 @@ pre {
 }
 
 .editor-text {
-  text-align: center;
-  /* background-color: rgb(49 48 51 / 87%); */
-  /* color: rgba(250, 230, 194, 0.972); */
-  color: black;
-  font-size: 1.2em;
-  line-height: 2;
-  justify-content: center;
+  /* text-align: center; */
+  /* height: 2.5em; */
+  background-color: #272822;
+  box-shadow: 0px -3px 4px rgba(0, 0, 0, 0.301) inset;
+  color: rgb(134, 126, 126);
+  /* color: black; */
+  font-size: 0.7em;
+  /* line-height: 2; */
+  padding: 0px 15px;
+  display: flex;
+  align-items: center;
+  border-radius: 10px 10px 0 0;
 }
 
+.editor-text i {
+  padding: 15px 6px 15px 0;
+
+}
+
+.editor-text::after {
+ 
+  font-size: 1.2em;
+  border-radius: 10px 10px 0 0;
+  box-shadow: 0px -5px 4px 2px rgba(0, 0, 0, 0.301);
+  line-height: 41px;
+  margin-left: 15px;
+  padding-left: 15px;
+  height: 100%;
+  width: 30%;
+  background-color: #272822;
+  z-index: 10;
+}
+.html::after{
+  content: "index.html";
+}
+.css::after{
+  content: "style.css";
+}
+.js::after{
+  content: "script.js";
+}
 .output-pane {
   left: 0;
   border: 0px solid;
@@ -61,6 +95,7 @@ pre {
   line-height: 2.5;
   justify-content: center !important;
 }
-.txt-box{
-  border: 1px solid black;
+
+.cm-s-monokai.CodeMirror  {
+  border-radius: 0 0 10px 10px;
 }

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Row, Col, Container } from "react-bootstrap";
 import Editor from "./WebEditor/Editor";
-import Footer from "./Footer";
+// import Footer from "./Footer";
 import { useLocalStorage } from "../Hooks/LocalStorage";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../App.css";
@@ -43,7 +43,7 @@ function LaunguageManager() {
       </html>`;
 
   useEffect(() => {
-    setTimeout(() => {}, 500);
+    setTimeout(() => { }, 500);
     updateHtmlStrorage(html);
     updateCssStrorage(css);
     updateJsStrorage(js);
@@ -54,8 +54,12 @@ function LaunguageManager() {
       <Container fluid={true} className="pane pane-top">
         <Row noGutters={true}>
           <Col md={4} className="editor-lang">
-            <div className="editor-text">
-              <i className="fab fa-html5"> </i> Html
+            <div className="editor-text html">
+
+
+              <i className="fa fa-circle" style={{ color: '#FB615A' }}> </i>
+              <i className="fa fa-circle" style={{ color: '#FEBB31' }}> </i>
+              <i className="fa fa-circle" style={{ color: '#27CE41' }}> </i>
             </div>
             <Editor
               launguage="xml"
@@ -63,13 +67,16 @@ function LaunguageManager() {
               onChange={(newVal) => {
                 updateHtml(newVal);
               }}
-              
+
             />
           </Col>
 
           <Col md={4} className="editor-lang">
-            <div className="editor-text">
-              <i className="fab fa-css3-alt"></i> Css
+            <div className="editor-text css">
+              <i className="fa fa-circle" style={{ color: '#FB615A' }}> </i>
+              <i className="fa fa-circle" style={{ color: '#FEBB31' }}> </i>
+              <i className="fa fa-circle" style={{ color: '#27CE41' }}> </i>
+              {/* <div className="window-tab">index.html</div> */}
             </div>
             <Editor
               launguage="css"
@@ -81,8 +88,10 @@ function LaunguageManager() {
           </Col>
 
           <Col md={4} className="editor-lang">
-            <div className="editor-text">
-              <i className="fab fa-js-square"></i> Js
+            <div className="editor-text js">
+              <i className="fa fa-circle" style={{ color: '#FB615A' }}> </i>
+              <i className="fa fa-circle" style={{ color: '#FEBB31' }}> </i>
+              <i className="fa fa-circle" style={{ color: '#27CE41' }}> </i>
             </div>
             <Editor
               launguage="javascript"
@@ -101,11 +110,12 @@ function LaunguageManager() {
             srcDoc={srcDoc}
             className="output-pane"
             allowFullScreen
+            title="output-box"
           ></iframe>
         </Row>
       </Container>
 
-      {/* <Footer /> */}
+      
     </div>
   );
 }
